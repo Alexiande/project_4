@@ -3,8 +3,9 @@ import 'package:project_4/recipe.dart';
 
 class ListScreen extends StatefulWidget {
   final List<Recipe> recipes;
+  final Color backgroundColor;
 
-  ListScreen({required this.recipes});
+  ListScreen({required this.recipes, required this.backgroundColor});
 
   @override
   _ListScreenState createState() => _ListScreenState();
@@ -17,6 +18,7 @@ class _ListScreenState extends State<ListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: widget.backgroundColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(

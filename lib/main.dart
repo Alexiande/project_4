@@ -51,9 +51,10 @@ class _MyAppState extends State<MyApp> {
               ),
               TabBarView(
                 children: [
-                  ColumnScreen(recipes: recipes),
-                  ListScreen(recipes: recipes),
-                  SeparatedListScreen(recipes: recipes),
+                  ColumnScreen(recipes: recipes, backgroundColor: Colors.white), // Pass background color to ColumnScreen
+                  ListScreen(recipes: recipes, backgroundColor: Colors.grey),
+                  // Pass background color to ListScreen
+                  SeparatedListScreen(recipes: recipes, backgroundColor: Colors.blue), // Pass background color to SeparatedListScreen
                 ],
               ),
             ],
@@ -63,4 +64,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-

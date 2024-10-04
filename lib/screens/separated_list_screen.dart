@@ -11,7 +11,7 @@ class AppImage extends StatelessWidget {
 class SeparatedListScreen extends StatefulWidget {
   final List<Recipe> recipes;
 
-  SeparatedListScreen({required this.recipes});
+  SeparatedListScreen({required this.recipes, required MaterialColor backgroundColor});
 
   @override
   _SeparatedListScreenState createState() => _SeparatedListScreenState();

@@ -4,7 +4,7 @@ import 'package:project_4/recipe.dart';
 class ColumnScreen extends StatefulWidget {
   final List<Recipe> recipes;
 
-  ColumnScreen({required this.recipes});
+  ColumnScreen({required this.recipes, required Color backgroundColor});
 
   @override
   _ColumnScreenState createState() => _ColumnScreenState();
