@@ -24,6 +24,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Recipe App',
+      theme: ThemeData(
+        primaryColor: Colors.blue, // Set the primary color to blue
+      ),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -35,13 +38,24 @@ class _MyAppState extends State<MyApp> {
                 Tab(text: 'ListView'),
                 Tab(text: 'ListView.separated'),
               ],
+              indicatorColor: Colors.blue, // Set the tab indicator color to blue
             ),
+            leading: Icon(Icons.menu, color: Colors.blue), // Set the leading icon color to blue
           ),
-          body: TabBarView(
+          body: Stack(
             children: [
-              ColumnScreen(recipes: recipes),
-              ListScreen(recipes: recipes),
-              SeparatedListScreen(recipes: recipes),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey[200], // Set the background color to blueGrey
+                ),
+              ),
+              TabBarView(
+                children: [
+                  ColumnScreen(recipes: recipes),
+                  ListScreen(recipes: recipes),
+                  SeparatedListScreen(recipes: recipes),
+                ],
+              ),
             ],
           ),
         ),
@@ -49,3 +63,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+

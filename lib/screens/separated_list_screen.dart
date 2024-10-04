@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:project_4/recipe.dart';
 
+class AppImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset('assets/img.png');
+  }
+}
+
 class SeparatedListScreen extends StatefulWidget {
   final List<Recipe> recipes;
 
@@ -17,6 +24,10 @@ class _SeparatedListScreenState extends State<SeparatedListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Separated List Screen'),
+        leading: AppImage(), // добавляем картинку в appBar
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
@@ -94,3 +105,19 @@ class _SeparatedListScreenState extends State<SeparatedListScreen> {
     );
   }
 }
+
+class AnotherScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Another Screen'),
+        leading: AppImage(), // добавляем картинку в appBar
+      ),
+      body: Center(
+        child: AppImage(), // добавляем картинку в body экрана
+      ),
+    );
+  }
+}
+
